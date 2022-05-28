@@ -1,0 +1,17 @@
+ {% extends 'base.html' %}
+ {% load static %}
+ {% block content %}
+   <div class="container p-3 my-3 bg-dark text-white">
+      <div class="row" style="margin-top: 20px;">
+         <br><br><br><br><br><br><br>
+         {% for i in hospitals %}
+         <br>
+         <h2>ОКПО БОЛЬНИЦЫ: {{ i.ocpo }}</h2>
+         <h3>Главный врач больницы:{{ i.main_doctor }}</h3>
+         <h3>Регион: {{ i.region }}</h3>
+         <h3>Вместимость: {{ i.amount_emp }}</h3>
+         {% endfor %}
+      </div>
+   </div>
+
+ {% endblock %}

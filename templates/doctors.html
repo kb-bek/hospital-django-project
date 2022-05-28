@@ -1,0 +1,20 @@
+   {% extends 'base.html' %}
+   {% load static %}
+   {% block content %}
+   <div class="container p-3 my-3 bg-dark text-white">
+      <div class="row" style="margin-top: 20px;">
+         <br><br><br><br><br><br><br>
+         {% for i in doctors %}
+         <br>
+         <h3>ФИО: {{ i.fullname }}</h3>
+         <h3>Специальность: {{ i.specialist }}</h3>
+         <h3>Номер телефона: {{ i.phone_number }}</h3>
+         <h3>Медсестра: {{ i.nurse_connect }}</h3>
+         <h3>Номер телефона медсестры: {{ i.nurse_connect.phone_number }}</h3>
+         <h3>Кол-во пациентов: {{ i.patient_connect.all.count }}</h3>
+         {% endfor %}
+      </div>
+   </div>
+
+
+   {% endblock %}
